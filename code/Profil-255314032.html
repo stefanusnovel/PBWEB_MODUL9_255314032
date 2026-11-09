@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Profile Stefanus Novelino Kurniawan</title>
+        <link rel="stylesheet" href="../style/style.css">
+        <link rel="stylesheet" href="../style/darkMode.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header>
+                <button id="btn-tema" class="btn-tema">Ganti Tema</button>
+                <img src="../assets/novel.jpeg" alt="Novel" class="foto-profil">
+                <h1>Welcome to My Profile</h1>
+                <!-- Navigasi -->
+                <nav>
+                    <ul>
+                        <li><a href="#biodata">Tentang Saya</a></li>
+                        <li><a href="#pengalaman">Pengalaman Kegiatan</a></li>
+                        <li><a href="#portofolio">Portofolio</a></li>
+                        <li><a href="#pesan">Kirim Pesan</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- Konten Utama -->
+            <main>
+                <!-- Biodata -->
+                <section id="biodata">
+                    <h2>Biodata Singkat</h2>
+                    <p>Hi, Saya Stefanus Novelino Kurniawan biasa dipanggil Novel, saya merupakan Mahasiswa Informatika Universitas Sanata Dharma</p>
+                    <ul>
+                        <li>NIM : 255314032</li>
+                        <li>Umur: 18 tahun</li>
+                        <li>Pekerjaan: Mahasiswa</li>
+                    </ul>
+                    <h2>Hobi</h2>
+                    <div class="hobi-artikel">
+                        <article><h4>Menonton Film</h4></article>
+                        <article><h4>Memasak</h4></article>
+                        <article><h4>Bermain Game</h4></article>
+                    </div>
+                </section>
+                <!-- Pengalaman -->
+                <section id="pengalaman">
+                    <h2>Pengalaman Kegiatan</h2>
+                    <article>
+                        <h3>Kepanitiaan Acara Kampus</h3>
+                        <p>Terlibat aktif sebagai Anggota Perlengkapan untuk acara Malam Apresiasi Mahasiswa MAM 2025, Aksi Peduli, dan Pinissi. Memastikan ketersediaan dan kesiapan perlengkapan selama acara berlangsung</p>
+                    </article>
+                    <h3>Riwayat Kepanitiaan</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Nama Kepanitiaan</th><th>Jabatan</th><th>Tahun</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Nama Kepanitiaan">Kepanitiaan MAM</td>
+                                <td data-label="Jabatan">Anggota Perlengkapan</td>
+                                <td data-label="Tahun">2025</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Nama Kepanitiaan">Kepanitiaan Aksi Peduli</td>
+                                <td data-label="Jabatan">Anggota Perlengkapan</td>
+                                <td data-label="Tahun">2026</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Nama Kepanitiaan">Kepanitiaan Pinissi</td>
+                                <td data-label="Jabatan">Anggota Perlengkapan</td>
+                                <td data-label="Tahun">2026</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <!-- Bagian Portofolio -->
+                <section id="portofolio">
+                    <h2>Portofolio</h2>
+                    <div class="form-tambah">
+                        <input type="text" id="input-judul" placeholder="Judul Portofolio...">
+                        <textarea id="input-deskripsi" placeholder="Deskripsi Portofolio..."></textarea>
+                        <button id="btn-tambah">Tambah Portofolio Baru</button>
+                    </div>
+                    <div class="daftar-portofolio"></div>
+                </section>
+                <!-- Kirim Pesan -->
+                <section id="pesan">
+                    <h2>Pesan Anonim</h2>
+                    <form action="#" method="post">
+                        <div>
+                            <label for="pesan-input">Pesan:</label>
+                            <textarea id="pesan-input" name="pesan" placeholder="Masukkan pesan Anda"></textarea>
+                        </div>
+                        <fieldset>
+                            <legend>Tau web ini dari mana?</legend>
+                            <input type="radio" id="sumber-temen" name="sumber" value="temen">
+                            <label for="sumber-temen">Temen</label>
+                            <input type="radio" id="sumber-ig" name="sumber" value="instagram">
+                            <label for="sumber-ig">Instagram</label>
+                            <input type="radio" id="sumber-email" name="sumber" value="email">
+                            <label for="sumber-email">Email</label>
+                        </fieldset>
+                        <button type="submit">Kirim</button>
+                    </form>
+                </section>
+                <!-- Form  Komentar -->
+                <section id="komentar">
+                    <h2>Tinggalkan Komentar</h2>
+                    <form id="form-komentar">
+                        <!-- Pesan error menggunakan class -->
+                        <div id="error-message" class="error-msg"></div>
+                        <input type="text" id="input-nama" class="form-input" placeholder="Nama Anda" required>
+                        <textarea id="input-pesan" class="form-input" placeholder="Tulis komentar... (minimal 5 karakter)" required></textarea>
+                        
+                        <div class="aksi-komentar">
+                            <button type="submit" class="btn-submit">Kirim</button>
+                            <button type="button" id="btn-hapus-semua" class="btn-danger">Hapus Semua Komentar</button>
+                        </div>
+                    </form>
+                    <h3>Komentar dari API</h3>
+                    <div id="loading" class="loading">
+                        <div class="spinner"></div>
+                        <p>Memuat komentar...</p>
+                    </div>
+                    <ul id="daftar-komentar" class="komen-list"></ul>
+                </section>
+                <!-- Tombol kembali ke atas-->
+                <button id="btn-kembali-atas" class="btn-kembali-atas">Kembali ke Atas</button>
+                <br>
+                <!-- Tombol menampilkan atau  menyembunyikan  aside -->
+                <button   id="btn-tampil-aside"  class="btn-submit">Sembunyikan Kontak</button>
+                <!-- Informasi Kontak -->
+                <aside id="sidebar">
+                    <h2>Kontak</h2>
+                    <p>
+                        Email : <a href="mailto:novelkurniawan3@gmail.com">novelkurniawan3@gmail.com</a><br>
+                        Instagram : <a href="https://www.instagram.com/stefanus_novelino?igsi=dWI3bGx1a2xrNG5o" target="_blank">@stefanus_novelino</a>
+                    </p>
+                </aside>
+            </main>
+            <!-- Footer Hak Cipta -->
+            <footer>
+                <p>&copy; 2026 Stefanus Novelino Kurniawan</p>
+                <!-- Tombol  reset data -->
+                <button id="btn-reset"  class="btn-danger">Reset Semua Data</button>
+            </footer>
+        </div>
+        <script src="../script/script.js"></script>
+    </body>
+</html>
